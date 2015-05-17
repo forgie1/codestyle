@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<ruleset name="Artfocus">
+	<description>Modified PSR-2 coding standard - tabs, uppercase TRUE/FALSE/NULL.</description>
+
+	<rule ref="PSR2">
+		<!-- We use tabs -->
+		<exclude name="Generic.WhiteSpace.ScopeIndent"/>
+
+		<!-- We USE tabs-->
+		<exclude name="Generic.WhiteSpace.DisallowTabIndent"/>
+
+		<!-- we've got it modified below -->
+		<exclude name="Generic.Files.LineLength"/>
+
+		<!-- We use uppercase constants -->
+		<exclude name="Generic.PHP.LowerCaseConstant"/>
+
+		<!-- we've got it fixed -->
+		<exclude name="PSR2.Classes.ClassDeclaration"/>
+	</rule>
+
+	<rule ref="Artfocus.Classes.ClassDeclaration"/>
+
+	<rule ref="Generic.Files.ByteOrderMark"/>
+	<rule ref="Generic.Files.LineLength">
+		<properties>
+			<property name="lineLimit" value="80"/>
+			<property name="absoluteLineLimit" value="160"/>
+		</properties>
+	</rule>
+
+	<rule ref="Generic.Files.OneInterfacePerFile"/>
+	<rule ref="PSR2.Files.EndFileNewline"/>
+
+	<rule ref="Generic.NamingConventions.UpperCaseConstantName"/>
+
+	<rule ref="Generic.PHP.DisallowShortOpenTag"/>
+	<rule ref="Generic.PHP.UpperCaseConstant"/>
+
+	<rule ref="Generic.WhiteSpace.DisallowSpaceIndent"/>
+
+	<rule ref="Squiz.WhiteSpace.FunctionSpacing">
+		<properties>
+			<property name="spacing" value="1"/>
+		</properties>
+	</rule>
+
+	<rule ref="Generic.Formatting.NoSpaceAfterCast"/>
+
+	<rule ref="Squiz.Classes.LowercaseClassKeywords"/>
+	<rule ref="Squiz.Classes.ValidClassName"/>
+
+	<rule ref="MySource.Objects.AssignThis"/>
+
+	<!-- we allow this for exceptions - ONLY TEMPORARY -->
+	<rule ref="PSR1.Classes.ClassDeclaration.MultipleClasses">
+		<severity>0</severity>
+	</rule>
+</ruleset>

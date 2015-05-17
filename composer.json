@@ -1,0 +1,12 @@
+{
+    "name": "artfocus/codestyle",
+    "description": "ArtFocus Coding Standards for PHP CodeSniffer",
+    "minimum-stability": "stable",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jaroslav Hranička",
+            "email": "hranicka@outlook.com"
+        }
+    ]
+}
