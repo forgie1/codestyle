@@ -17,9 +17,13 @@
 
 		<!-- we've got it fixed -->
 		<exclude name="PSR2.Classes.ClassDeclaration"/>
+
+		<!-- we've got it fixed -->
+		<exclude name="Squiz.ControlStructures.ControlSignature"/>
 	</rule>
 
 	<rule ref="Artfocus.Classes.ClassDeclaration"/>
+	<rule ref="Artfocus.ControlStructures.ControlSignature"/>
 
 	<rule ref="Generic.Files.ByteOrderMark"/>
 	<rule ref="Generic.Files.LineLength">
