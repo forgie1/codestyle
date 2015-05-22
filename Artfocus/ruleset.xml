@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <ruleset name="Artfocus">
 	<description>Modified PSR-2 coding standard - tabs, uppercase TRUE/FALSE/NULL.</description>
+	<exclude-pattern>*.phtml</exclude-pattern>
 
 	<rule ref="PSR2">
 		<!-- We use tabs -->
