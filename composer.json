@@ -8,5 +8,8 @@
             "name": "Jaroslav Hranička",
             "email": "hranicka@outlook.com"
         }
-    ]
+    ],
+    "require-dev": {
+        "squizlabs/php_codesniffer": "~2.5"
+    }
 }
