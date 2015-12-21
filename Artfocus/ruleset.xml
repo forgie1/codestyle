@@ -1,5 +1,7 @@
 <?xml version="1.0"?>
-<ruleset name="Consistence">
+<ruleset name="Artfocus">
+	<exclude-pattern>*.phtml</exclude-pattern>
+
 	<rule ref="Generic.Arrays.DisallowLongArraySyntax"/>
 	<rule ref="Generic.Classes.DuplicateClassName"/>
 	<rule ref="Generic.CodeAnalysis.EmptyStatement">
@@ -9,8 +11,8 @@
 	<rule ref="Generic.CodeAnalysis.UnconditionalIfStatement"/>
 	<rule ref="Generic.CodeAnalysis.UnnecessaryFinalModifier"/>
 	<rule ref="Generic.Files.InlineHTML"/>
-	<rule ref="Generic.Formatting.SpaceAfterCast"/>
-	<rule ref="Generic.Functions.OpeningFunctionBraceBsdAllman"/>
+	<!--<rule ref="Generic.Formatting.SpaceAfterCast"/>-->
+	<!--<rule ref="Generic.Functions.OpeningFunctionBraceBsdAllman"/>-->
 	<rule ref="Generic.NamingConventions.ConstructorName"/>
 	<rule ref="Generic.PHP.CharacterBeforePHPOpeningTag"/>
 	<rule ref="Generic.PHP.DeprecatedFunctions"/>
@@ -43,6 +45,9 @@
 		<exclude name="Squiz.ControlStructures.LowercaseDeclaration"/><!-- checked by more generic Generic.PHP.LowerCaseKeyword -->
 		<exclude name="Squiz.Functions.MultiLineFunctionDeclaration.ContentAfterBrace"/><!-- we want to allow comments -->
 		<exclude name="Squiz.Functions.MultiLineFunctionDeclaration.NewlineBeforeOpenBrace"/><!-- clashes with OpeningFunctionBraceBsdAllman -->
+
+		<!-- we use uppercase constant including TRUE, FALSE, NULL - TEMPORARY  -->
+		<exclude name="Generic.PHP.LowerCaseConstant"/>
 	</rule>
 	<rule ref="Squiz.Arrays.ArrayBracketSpacing"/>
 	<rule ref="Squiz.Arrays.ArrayDeclaration">
@@ -56,8 +61,14 @@
 		<exclude name="Squiz.Arrays.ArrayDeclaration.NoCommaAfterLast"/><!-- expects multi-value array always written on multiple lines -->
 		<exclude name="Squiz.Arrays.ArrayDeclaration.SingleLineNotAllowed"/><!-- multiple values can be written on a single line -->
 		<exclude name="Squiz.Arrays.ArrayDeclaration.ValueNotAligned"/><!-- we don't want spacing with alignment -->
+
+		<!-- allow arrays without indexes also when the first is set (Nette\Database $criteria) -->
+		<exclude name="Squiz.Arrays.ArrayDeclaration.NoKeySpecified"/>
 	</rule>
-	<rule ref="Squiz.Classes.ClassFileName"/>
+	<rule ref="Squiz.Classes.ClassFileName">
+		<!-- allow multiple exceptions in one file - TEMPORARY  -->
+		<exclude name="Squiz.Classes.ClassFileName.NoMatch"/>
+	</rule>
 	<rule ref="Squiz.Classes.SelfMemberReference"/>
 	<rule ref="Squiz.Commenting.DocCommentAlignment">
 		<exclude name="Squiz.Commenting.DocCommentAlignment.SpaceAfterStar"/><!-- space needed for indented annotations -->
@@ -79,6 +90,12 @@
 		<exclude name="Squiz.Commenting.FunctionComment.ThrowsNoFullStop"/><!-- @throws are forbidden -->
 		<exclude name="Squiz.Commenting.FunctionComment.ThrowsNotCapital"/><!-- @throws are forbidden -->
 		<exclude name="Squiz.Commenting.FunctionComment.TypeHintMissing"/><!-- doesn't work with self as typehint -->
+
+		<!-- we allow short param names like int, bool - TEMPORARY -->
+		<exclude name="Squiz.Commenting.FunctionComment.IncorrectParamVarName"/>
+
+		<!-- allow inline comments (code conditions, code folding) -->
+		<exclude name="Squiz.Commenting.FunctionComment.WrongStyle"/>
 	</rule>
 	<rule ref="Squiz.Commenting.FunctionComment.DuplicateReturn">
 		<message>Only 1 @return annotation is allowed in a function comment</message>
@@ -103,10 +120,13 @@
 	<rule ref="Squiz.PHP.LowercasePHPFunctions"/>
 	<rule ref="Squiz.PHP.NonExecutableCode"/>
 	<rule ref="Squiz.Scope.StaticThisUsage"/>
-	<rule ref="Squiz.Strings.DoubleQuoteUsage"/>
 	<rule ref="Squiz.Strings.DoubleQuoteUsage.ContainsVar">
 		<message>Variable "%s" not allowed in double quoted string; use sprintf() instead</message>
+
+		<!-- allow double quotes if contains variable - TEMPORARY  -->
+		<severity>0</severity>
 	</rule>
+	<rule ref="Squiz.Strings.DoubleQuoteUsage"/>
 	<rule ref="Squiz.Strings.ConcatenationSpacing">
 		<properties>
 			<property name="ignoreNewlines" value="true"/>
@@ -141,5 +161,22 @@
 	</rule>
 	<rule ref="Squiz.WhiteSpace.SuperfluousWhitespace.EmptyLines">
 		<severity>5</severity><!-- turned off by PSR2 -> turning on with default severity -->
+	</rule>
+
+	<!-- THINK ABOUT IT -->
+	<rule ref="Generic.Formatting.NoSpaceAfterCast"/>
+
+	<!-- TEMPORARY -->
+	<!-- we removed it above so turn it on again -->
+	<rule ref="Generic.PHP.UpperCaseConstant"/>
+
+	<!-- we allow this for exceptions -->
+	<rule ref="PSR1.Classes.ClassDeclaration.MultipleClasses">
+		<severity>0</severity>
+	</rule>
+
+	<!-- allow side effects (bootstrap.php) -->
+	<rule ref="PSR1.Files.SideEffects.FoundWithSymbols">
+		<severenity>0</severenity>
 	</rule>
 </ruleset>

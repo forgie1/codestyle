@@ -1,15 +1,13 @@
 # ArtFocus Coding Standards for PHP CodeSniffer
 
-* Based on [PSR-2](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md).
-* Whitespace: TABS instead of SPACES.
-* Constants: Uppercase constants including TRUE, FALSE, NULL.
-* Classes: Before closing brace it must be one empty line.
-* Files: BOM is not allowed.
-* Files: Max. line length is increased to 80 - 160 chars.
-* Whitespace: File must end with one empty line.
-* Whitespace: Function spacing is 1 empty line.
-* Whitespace: There is no space after type cast.
-* PHP: Short open tags are not allowed.
+* Based [Consistence](https://github.com/consistence/coding-standard/tree/master/Consistence).
+* But it differs in some cases and all of them are TEMPORARY (back-compatibility):
+** Arrays: Arrays without key are allowed also when the first key is specified (Nette\Database $criteria).
+** Classes: Multiple classes can be found in one file (exceptions).
+** Constants: Uppercase constants including TRUE, FALSE, NULL (Nette Code Style).
+** Functions: Opening brace of function with multiline arguments must be on the same line as closing parenthesis.
+** Whitespace: There is no space after type cast.
+** and some other differences.
 
 ## Example Usage
 
