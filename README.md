@@ -1,6 +1,6 @@
 # ArtFocus Coding Standards for PHP CodeSniffer
 
-* Based [Consistence](https://github.com/consistence/coding-standard/tree/master/Consistence).
+* Based on [Consistence](https://github.com/consistence/coding-standard/tree/master/Consistence).
 * But it differs in some cases and all of them are TEMPORARY (back-compatibility):
 	* Arrays: Arrays without key are allowed also when the first key is specified (Nette\Database $criteria).
 	* Classes: Multiple classes can be found in one file (exceptions).
