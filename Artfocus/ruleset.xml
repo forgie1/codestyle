@@ -10,16 +10,16 @@
 		<!-- We USE tabs-->
 		<exclude name="Generic.WhiteSpace.DisallowTabIndent"/>
 
-		<!-- we've got it modified below -->
+		<!-- We've got it modified below -->
 		<exclude name="Generic.Files.LineLength"/>
 
 		<!-- We use uppercase constants -->
 		<exclude name="Generic.PHP.LowerCaseConstant"/>
 
-		<!-- we've got it fixed -->
+		<!-- We've got it fixed -->
 		<exclude name="PSR2.Classes.ClassDeclaration"/>
 
-		<!-- we've got it fixed -->
+		<!-- We've got it fixed -->
 		<exclude name="Squiz.ControlStructures.ControlSignature"/>
 	</rule>
 
@@ -57,7 +57,7 @@
 
 	<rule ref="MySource.Objects.AssignThis"/>
 
-	<!-- we allow this for exceptions - ONLY TEMPORARY -->
+	<!-- We allow this for exceptions - ONLY TEMPORARY -->
 	<rule ref="PSR1.Classes.ClassDeclaration.MultipleClasses">
 		<severity>0</severity>
 	</rule>
