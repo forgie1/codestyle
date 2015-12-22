@@ -8,6 +8,7 @@
 	* Comments: Type parameters are not checked (allow shortcuts like int, bool).
 	* Constants: Uppercase constants including TRUE, FALSE, NULL (Nette Code Style).
 	* Formatting: There is not space after type cast.
+	* Formatting: Heredoc syntax is allowed (eg. in tests).
 	* Functions: Opening brace of function with multiline arguments must be on the same line as closing parenthesis.
 	* Strings: Double quotes are permitted when contains a variable.
 	* Whitespace: There is no space after type cast.
