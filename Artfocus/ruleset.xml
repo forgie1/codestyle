@@ -62,8 +62,9 @@
 		<exclude name="Squiz.Arrays.ArrayDeclaration.SingleLineNotAllowed"/><!-- multiple values can be written on a single line -->
 		<exclude name="Squiz.Arrays.ArrayDeclaration.ValueNotAligned"/><!-- we don't want spacing with alignment -->
 
-		<!-- allow arrays without indexes also when the first is set (Nette\Database $criteria) -->
+		<!-- allow arrays without indexes also when the first is set (Nette\Database $criteria) - TEMPORARY -->
 		<exclude name="Squiz.Arrays.ArrayDeclaration.NoKeySpecified"/>
+		<exclude name="Squiz.Arrays.ArrayDeclaration.KeySpecified"/>
 	</rule>
 	<rule ref="Squiz.Classes.ClassFileName">
 		<!-- allow multiple exceptions in one file - TEMPORARY  -->
@@ -94,7 +95,7 @@
 		<!-- we allow short param names like int, bool - TEMPORARY -->
 		<exclude name="Squiz.Commenting.FunctionComment.IncorrectParamVarName"/>
 
-		<!-- allow inline comments (code conditions, code folding) -->
+		<!-- allow inline comments (code conditions, code folding) - TEMPORARY -->
 		<exclude name="Squiz.Commenting.FunctionComment.WrongStyle"/>
 	</rule>
 	<rule ref="Squiz.Commenting.FunctionComment.DuplicateReturn">
@@ -166,16 +167,15 @@
 	<!-- THINK ABOUT IT -->
 	<rule ref="Generic.Formatting.NoSpaceAfterCast"/>
 
-	<!-- TEMPORARY -->
-	<!-- we removed it above so turn it on again -->
+	<!-- we removed it above so turn it on again - TEMPORARY -->
 	<rule ref="Generic.PHP.UpperCaseConstant"/>
 
-	<!-- we allow this for exceptions -->
+	<!-- we allow this for exceptions - TEMPORARY -->
 	<rule ref="PSR1.Classes.ClassDeclaration.MultipleClasses">
 		<severity>0</severity>
 	</rule>
 
-	<!-- allow side effects (bootstrap.php) -->
+	<!-- allow side effects (bootstrap.php) - TEMPORARY -->
 	<rule ref="PSR1.Files.SideEffects.FoundWithSymbols">
 		<severenity>0</severenity>
 	</rule>
