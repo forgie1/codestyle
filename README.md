@@ -23,3 +23,7 @@ Install into your project the best via [Composer](https://getcomposer.org):
 Run [PHP CodeSniffer](https://pear.php.net/package/PHP_CodeSniffer/) like this:
 
 	$ vendor/bin/phpcs --standard=/path/to/Artfocus/ruleset.xml -sp src tests
+
+## Versioning
+
+This packages uses [semver.org](semver.org).
