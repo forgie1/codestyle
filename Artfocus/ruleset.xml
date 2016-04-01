@@ -91,6 +91,7 @@
 		<exclude name="Squiz.Commenting.FunctionComment.ThrowsNoFullStop"/><!-- @throws are forbidden -->
 		<exclude name="Squiz.Commenting.FunctionComment.ThrowsNotCapital"/><!-- @throws are forbidden -->
 		<exclude name="Squiz.Commenting.FunctionComment.TypeHintMissing"/><!-- doesn't work with self as typehint -->
+		<exclude name="Squiz.Commenting.FunctionComment.ScalarTypeHintMissing"/><!-- works only for code requiring PHP 7 code or better -->
 
 		<!-- we allow short param names like int, bool - TEMPORARY -->
 		<exclude name="Squiz.Commenting.FunctionComment.IncorrectParamVarName"/>
