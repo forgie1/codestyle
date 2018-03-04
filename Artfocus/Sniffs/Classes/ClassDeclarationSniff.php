@@ -6,19 +6,22 @@
  * @author Jan Dolecek <juzna.cz@gmail.com> (THX for the original inspiration)
  * @author Jaroslav Hranička <hranicka@outlook.com>
  */
-class Artfocus_Sniffs_Classes_ClassDeclarationSniff extends PEAR_Sniffs_Classes_ClassDeclarationSniff
+
+use PHP_CodeSniffer\Files\File;
+
+class Artfocus_Sniffs_Classes_ClassDeclarationSniff extends \PHP_CodeSniffer\Standards\Squiz\Sniffs\Classes\ClassDeclarationSniff
 {
 
 	/** @var int */
 	public $numBlankLinesBeforeClosingBrace = 1;
 
-	public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+	public function process(File $phpcsFile, $stackPtr)
 	{
 		parent::process($phpcsFile, $stackPtr);
 		$this->processClose($phpcsFile, $stackPtr);
 	}
 
-	public function processClose(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+	public function processClose(File $phpcsFile, $stackPtr)
 	{
 		$tokens = $phpcsFile->getTokens();
 
