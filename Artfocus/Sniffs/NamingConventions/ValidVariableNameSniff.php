@@ -13,7 +13,7 @@ class Artfocus_Sniffs_NamingConventions_ValidVariableNameSniff extends \PHP_Code
 	const CODE_CAMEL_CAPS = 'NotCamelCaps';
 
 	/** @var string[] */
-	private static $phpReservedVars = [
+	protected $phpReservedVars = [
 		'_SERVER',
 		'_GET',
 		'_POST',
@@ -33,7 +33,7 @@ class Artfocus_Sniffs_NamingConventions_ValidVariableNameSniff extends \PHP_Code
 	{
 		$tokens = $phpcsFile->getTokens();
 		$varName = ltrim($tokens[$stackPtr]['content'], '$');
-		if (in_array($varName, self::$phpReservedVars, TRUE)) {
+		if (in_array($varName, $this->phpReservedVars, TRUE)) {
 			return; // skip PHP reserved vars
 		}
 		$objOperator = $phpcsFile->findPrevious([T_WHITESPACE], ($stackPtr - 1), NULL, TRUE);
